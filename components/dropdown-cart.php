@@ -1,4 +1,4 @@
-<div class="dropdown">
+<div class="<?= isset($dropdownClass) ? $dropdownClass : 'dropdown'; ?>">
     <a href="#" class="dropdown-toggle text-decoration-none text-dark" id="cartDropdown" role="button"
         data-bs-toggle="dropdown" aria-expanded="false">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
@@ -8,7 +8,7 @@
         </svg>
         <span class="badge bg-danger">3</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cartDropdown" style="width: 320px;">
+    <ul class="dropdown-menu dropdown-menu-end mt-3" aria-labelledby="cartDropdown" style="width: 320px;">
         <li>
             <h6 class="dropdown-header">Keranjang Belanja</h6>
         </li>

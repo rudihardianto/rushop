@@ -1,10 +1,14 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
         <a class="navbar-brand" href="#">RuShop</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="d-flex gap-3 align-items-center">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- dropdown cart -->
+            <?= component('dropdown-cart', ['dropdownClass' => 'dropdown d-md-none']); ?>
+        </div>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto gap-md-3">
                 <li class="nav-item">
@@ -19,7 +23,7 @@
             </ul>
             <div class="d-flex justify-content-end">
                 <!-- dropdown cart -->
-                <?= component('dropdown-cart'); ?>
+                <?= component('dropdown-cart', ['dropdownClass' => 'dropdown d-none d-sm-block']); ?>
             </div>
         </div>
     </div>

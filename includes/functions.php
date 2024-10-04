@@ -1,17 +1,12 @@
 <?php
+
 require_once __DIR__ . '/components.php';
 
-function url($url = null)
+function base_url($path = '', $secure = null)
 {
-    $url_utama = "http://dry_laundry.test";
-    if ($url != null) {
-        return $url_utama.'/'.$url;
-    } else {
-        return $url_utama;
-    }
+    $is_production = getenv('APP_ENV') === 'production';
+    $is_https = $is_production || ($secure ?? (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'));
+    $domain = getenv('APP_DOMAIN') ?: 'dry_laundry.test';
+    $base_url = ($is_https ? "https://" : "http://") . $domain;
+    return rtrim($base_url, '/') . '/' . ltrim($path, '/');
 }
-
-// baseUrl
-define("base_url", "http://rushop.test");
-
-?>

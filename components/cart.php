@@ -15,7 +15,10 @@
         <li class="dropdown-item d-flex align-items-center">
             <img src="https://via.placeholder.com/50" alt="Produk 1" class="me-2" width="50">
             <div class="flex-grow-1">
-                <small>Produk 1</small><br>
+                <small class="text-truncate d-inline-block" style="max-width: 150px;">
+                    Lorem ipsum dolor sit amet.
+                </small>
+                <br>
                 <span class="text-muted">2 pcs - Rp 100.000</span>
             </div>
             <span>Rp 200.000</span>
@@ -23,7 +26,10 @@
         <li class="dropdown-item d-flex align-items-center">
             <img src="https://via.placeholder.com/50" alt="Produk 2" class="me-2" width="50">
             <div class="flex-grow-1">
-                <small>Produk 2</small><br>
+                <small class="text-truncate d-inline-block" style="max-width: 150px;">
+                    Lorem ipsum dolor sit amet.
+                </small>
+                <br>
                 <span class="text-muted">1 pcs - Rp 150.000</span>
             </div>
             <span>Rp 150.000</span>
@@ -31,7 +37,10 @@
         <li class="dropdown-item d-flex align-items-center">
             <img src="https://via.placeholder.com/50" alt="Produk 3" class="me-2" width="50">
             <div class="flex-grow-1">
-                <small>Produk 3</small><br>
+                <small class="text-truncate d-inline-block" style="max-width: 150px;">
+                    Lorem ipsum dolor sit amet.
+                </small>
+                <br>
                 <span class="text-muted">3 pcs - Rp 200.000</span>
             </div>
             <span>Rp 600.000</span>

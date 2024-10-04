@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md">
+<nav class="navbar navbar-expand-md bg-body-tertiary">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#">RuShop.</a>
         <div class="d-flex gap-3 align-items-center">
@@ -12,13 +12,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto gap-md-3">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link <?=isActive('/')?>" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link <?=isActive('features')?>" href="/features">Features</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link <?=isActive('pricing')?>" href="/pricing">Pricing</a>
                 </li>
             </ul>
             <div class="d-flex justify-content-end">

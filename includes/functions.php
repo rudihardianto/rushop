@@ -11,3 +11,10 @@ function baseUrl($path = '', $secure = null)
 
     return rtrim($base_url, '/') . '/' . ltrim($path, '/');
 }
+
+function isActive($route)
+{
+    $currentUrl = trim($_SERVER['REQUEST_URI'], '/');
+
+    return $currentUrl === trim($route, '/') ? 'active fw-bold' : '';
+}

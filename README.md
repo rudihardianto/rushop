@@ -15,6 +15,13 @@ website toko online (php native)
 -   Panel Admin
 -   Sistem Autentikasi
 
+## Teknologi yang Digunakan
+
+-   PHP
+-   MySQL
+-   HTML/CSS/JavaScript
+-   Bootstrap (untuk tampilan responsif)
+
 ## Persyaratan Sistem
 
 -   PHP 8.3+

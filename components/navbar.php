@@ -6,7 +6,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto gap-3">
+            <ul class="navbar-nav mx-auto gap-md-3">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
@@ -28,7 +28,7 @@
                         </svg>
                         <span class="badge bg-danger">3</span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cartDropdown" style="width: 300px;">
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cartDropdown" style="width: 320px;">
                         <li>
                             <h6 class="dropdown-header">Keranjang Belanja</h6>
                         </li>

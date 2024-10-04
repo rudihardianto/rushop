@@ -14,7 +14,7 @@ require_once __DIR__ . '/includes/functions.php';
 </head>
 
 <body>
-    <?php component('navbar'); ?>
+    <?= component('navbar'); ?>
 
     <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
 </body>

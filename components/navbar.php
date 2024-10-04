@@ -7,7 +7,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- dropdown cart -->
-            <?= component('dropdown-cart', ['dropdownClass' => 'dropdown d-md-none']); ?>
+            <?=component('dropdown-cart', ['dropdownClass' => 'dropdown d-md-none']);?>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto gap-md-3">
@@ -23,7 +23,7 @@
             </ul>
             <div class="d-flex justify-content-end">
                 <!-- dropdown cart -->
-                <?= component('dropdown-cart', ['dropdownClass' => 'dropdown d-none d-sm-block']); ?>
+                <?=component('dropdown-cart', ['dropdownClass' => 'dropdown d-none d-sm-block']);?>
             </div>
         </div>
     </div>

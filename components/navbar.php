@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-body-tertiary">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="#">RuShop.</a>
+        <a class="navbar-brand fw-bold" href="<?=baseUrl()?>">RuShop.</a>
         <div class="d-flex gap-3 align-items-center">
             <!-- dropdown cart -->
             <?=component('cart', ['dropdownClass' => 'dropdown d-md-none']);?>
@@ -10,7 +10,7 @@
             </button>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto gap-md-3">
+            <ul class="navbar-nav nav-underline mx-auto gap-md-3">
                 <li class="nav-item">
                     <a class="nav-link <?=isActive('/')?>" href="/">Home</a>
                 </li>

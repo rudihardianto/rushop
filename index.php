@@ -9,8 +9,15 @@ require_once __DIR__ . '/includes/functions.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RuShop</title>
-    <!-- bootstrap -->
+    <!-- ccs, bootstrap -->
+    <link rel="stylesheet" href="<?=baseUrl('/assets/css/style.css')?>">
     <link rel="stylesheet" href="<?=baseUrl('/assets/css/bootstrap/bootstrap.min.css')?>">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>

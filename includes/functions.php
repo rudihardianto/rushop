@@ -16,5 +16,5 @@ function isActive($route)
 {
     $currentUrl = trim($_SERVER['REQUEST_URI'], '/');
 
-    return $currentUrl === trim($route, '/') ? 'active fw-bold' : '';
+    return $currentUrl === trim($route, '/') ? 'active fw-semibold underline' : '';
 }

@@ -14,7 +14,7 @@ function isLoggedIn()
 
         <!-- Toggler and Cart Button for Mobile -->
         <div class="d-flex align-items-center gap-3">
-            <?php if (isLoggedIn()): ?>
+            <?php if (!isLoggedIn()): ?>
             <!-- dropdown cart for mobile -->
             <div class="d-md-none">
                 <?=component('cart');?>

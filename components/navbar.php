@@ -43,8 +43,12 @@ function isLoggedIn()
 
             <div class="d-flex align-items-center gap-3">
                 <?php if (!isLoggedIn()): ?>
-                <a class="btn btn-outline-primary <?=isActive('login')?>" href="<?=baseUrl('/login')?>">Login</a>
-                <a class="btn btn-primary <?=isActive('register')?>" href="<?=baseUrl('/register')?>">Register</a>
+                <a class="btn btn-sm btn-outline-primary <?=isActive('login')?>" href="<?=baseUrl('/login')?>">
+                    Login
+                </a>
+                <a class="btn btn-sm btn-primary <?=isActive('register')?>" href="<?=baseUrl('/register')?>">
+                    Register
+                </a>
                 <?php else: ?>
                 <!-- dropdown cart for desktop -->
                 <div class="d-none d-md-block">

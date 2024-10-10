@@ -10,11 +10,9 @@ $database = "rushop";
 $conn = new mysqli($host, $username, $password, $database);
 
 // Memeriksa koneksi
-// if ($conn->connect_error) {
-//     die("Koneksi gagal: " . $conn->connect_error);
-// } else {
-//     echo "Koneksi berhasil!";
-// }
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
 
 // Menutup koneksi
 $conn->close();

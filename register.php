@@ -27,10 +27,24 @@ require_once __DIR__ . '/components/header.php';
                         </div>
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-primary">Register</button>
-                            <a href="<?=baseUrl()?>" class="btn btn-secondary">Kembali ke Halaman Utama</a>
+
+                            <div class="row d-flex justify-content-between align-items-center">
+                                <div class="col-6">
+                                    <a href="<?=baseUrl()?>" class="">
+                                        Back to Homepage
+                                    </a>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <span>
+                                        Already have a account?
+                                        <a href="<?=baseUrl('/login')?>" class="">
+                                            Log in
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </form>
-                    <p class="mt-3 text-center">Sudah punya akun? <a href="<?=baseUrl('/login')?>">Login di sini</a></p>
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@ function isLoggedIn()
             <?php if (isLoggedIn()): ?>
             <!-- dropdown cart for mobile -->
             <div class="d-md-none">
-                <?=component('cart', ['dropdownClass' => 'dropdown']);?>
+                <?=component('cart');?>
             </div>
             <?php endif;?>
 
@@ -52,7 +52,7 @@ function isLoggedIn()
                 <?php else: ?>
                 <!-- dropdown cart for desktop -->
                 <div class="d-none d-md-block">
-                    <?=component('cart', ['dropdownClass' => 'dropdown']);?>
+                    <?=component('cart');?>
                 </div>
 
                 <!-- Profile Dropdown -->

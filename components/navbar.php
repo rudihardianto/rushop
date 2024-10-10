@@ -42,7 +42,7 @@ function isLoggedIn()
             </ul>
 
             <div class="d-flex align-items-center gap-3">
-                <?php if (isLoggedIn()): ?>
+                <?php if (!isLoggedIn()): ?>
                 <a class="btn btn-sm btn-outline-primary <?=isActive('login')?>" href="<?=baseUrl('/login')?>">
                     Login
                 </a>

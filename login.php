@@ -47,5 +47,6 @@ require_once __DIR__ . '/components/header.php';
 </div>
 
 <?php
-require_once __DIR__ . '/components/footer-default.php';
+
+require_once __DIR__ . '/components/footer.php';
 ?>

@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/connect-database.php';
 require_once __DIR__ . '/components.php';
 
 function baseUrl($path = '', $secure = null)

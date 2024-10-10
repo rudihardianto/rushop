@@ -54,6 +54,21 @@ function isLoggedIn()
                 <div class="d-none d-md-block">
                     <?=component('cart', ['dropdownClass' => 'dropdown']);?>
                 </div>
+
+                <!-- Profile Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="path/to/profile.jpg" alt="Profile" width="30" height="30" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownUser">
+                        <li><a class="dropdown-item" href="<?=baseUrl('/settings')?>">Settings</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="<?=baseUrl('/logout')?>">Logout</a></li>
+                    </ul>
+                </div>
                 <?php endif;?>
             </div>
         </div>

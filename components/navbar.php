@@ -20,6 +20,12 @@
                 <li class="nav-item">
                     <a class="nav-link <?=isActive('pricing')?>" href="/pricing">Pricing</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link <?=isActive('register')?>" href="<?=baseUrl('/register')?>">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?=isActive('login')?>" href="<?=baseUrl('/login')?>">login</a>
+                </li>
             </ul>
             <div class="d-flex justify-content-end">
                 <!-- dropdown cart -->

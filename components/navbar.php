@@ -42,7 +42,7 @@ function isLoggedIn()
             </ul>
 
             <div class="d-flex align-items-center gap-3">
-                <?php if (!isLoggedIn()): ?>
+                <?php if (isLoggedIn()): ?>
                 <a class="btn btn-sm btn-outline-primary <?=isActive('login')?>" href="<?=baseUrl('/login')?>">
                     Login
                 </a>
@@ -61,7 +61,8 @@ function isLoggedIn()
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="path/to/profile.jpg" alt="Profile" width="30" height="30" class="rounded-circle">
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownUser">
+                    <ul class="dropdown-menu dropdown-menu-dropdown-menu-sm-start dropdown-menu-md-end shadow mt-md-3"
+                        aria-labelledby="dropdownUser">
                         <li><a class="dropdown-item" href="<?=baseUrl('/settings')?>">Settings</a></li>
                         <li>
                             <hr class="dropdown-divider">

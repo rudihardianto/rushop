@@ -41,14 +41,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" required>
+                            <input type="text" class="form-control" id="email" name="email" required
+                                value="<?=isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''?>">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me">
+                            <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me"
+                                <?=isset($_POST['remember_me']) ? 'checked' : ''?>>
                             <label class="form-check-label" for="remember_me">Ingat saya</label>
                         </div>
                         <div class="d-grid gap-2">
@@ -56,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="col-6">
                                     <a href="<?=baseUrl()?>" class="">
-                                        Back to Homepage
+                                        Back to Home
                                     </a>
                                 </div>
                                 <div class="col-6 text-end">

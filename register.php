@@ -1,7 +1,9 @@
 <?php
+
 require_once __DIR__ . '/components/header.php';
 
-$message = ''; // Untuk menyimpan pesan hasil pendaftaran
+$message     = ''; // Untuk menyimpan pesan hasil pendaftaran
+$messageType = ''; // Untuk menyimpan tipe pesan (success atau error)
 
 // Cek apakah form disubmit
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -16,7 +18,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 
     // Panggil fungsi Register dan simpan hasilnya
-    $message = Register($register);
+    $registerResult = Register($register);
+
+    if ($registerResult === "Pendaftaran berhasil!") {
+        $message     = $registerResult;
+        $messageType = 'success'; // Jika sukses, beri tipe 'success'
+    } else {
+        $message     = $registerResult;
+        $messageType = 'error'; // Jika gagal, beri tipe 'error'
+    }
 }
 ?>
 
@@ -27,30 +37,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="card-body">
                     <h2 class="card-title text-center mb-4">Register</h2>
 
-                    <!-- message -->
+                    <!-- Kondisi untuk menampilkan pesan alert -->
                     <?php if ($message): ?>
+                    <?php if ($messageType === 'success'): ?>
                     <div class="alert alert-info text-center">
                         <?=htmlspecialchars($message)?>
                     </div>
+                    <?php else: ?>
+                    <div class="alert alert-danger text-center">
+                        <?=htmlspecialchars($message)?>
+                    </div>
+                    <?php endif;?>
                     <?php endif;?>
 
                     <form method="POST" action="<?=baseUrl('/register')?>">
                         <div class="row">
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="name" class="form-label">Nama Lengkap</label>
-                                <input type="text" name="name" class="form-control" id="name" required>
+                                <input type="text" name="name" class="form-control" id="name" required
+                                    value="<?=$messageType === 'error' && isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''?>">
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control" id="email" required>
+                                <input type="email" name="email" class="form-control" id="email" required
+                                    value="<?=$messageType === 'error' && isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''?>">
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="phone" class="form-label">No Telepon</label>
-                                <input type="text" name="phone" class="form-control" id="phone" required>
+                                <input type="text" name="phone" class="form-control" id="phone" required
+                                    value="<?=$messageType === 'error' && isset($_POST['phone']) ? htmlspecialchars($_POST['phone']) : ''?>">
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="address" class="form-label">Alamat</label>
-                                <textarea name="address" class="form-control" id="address"></textarea>
+                                <textarea name="address" class="form-control"
+                                    id="address"><?=$messageType === 'error' && isset($_POST['address']) ? htmlspecialchars($_POST['address']) : ''?></textarea>
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="password" class="form-label">Password</label>
@@ -67,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="col-6">
                                     <a href="<?=baseUrl()?>" class="">
-                                        Back to Homepage
+                                        Back to Home
                                     </a>
                                 </div>
                                 <div class="col-6 text-end">

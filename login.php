@@ -2,6 +2,12 @@
 
 require_once __DIR__ . '/components/header.php';
 
+if (isset($_SESSION['user_id'])) {
+    // Redirect jika user sudah login
+    header('Location: ' . baseUrl());
+    exit;
+}
+
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -2,6 +2,12 @@
 
 require_once __DIR__ . '/components/header.php';
 
+if (isset($_SESSION['user_id'])) {
+    // Redirect jika user sudah login
+    header('Location: ' . baseUrl());
+    exit;
+}
+
 $message     = ''; // Untuk menyimpan pesan hasil pendaftaran
 $messageType = ''; // Untuk menyimpan tipe pesan (success atau error)
 

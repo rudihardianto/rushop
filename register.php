@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <?php if ($message): ?>
                     <?php if ($messageType === 'success'): ?>
                     <div class="alert alert-info text-center">
-                        <?=htmlspecialchars($message)?>
+                        <?=htmlspecialchars($message) . ' <a href="' . baseUrl('/login') . '">Login</a> sekarang untuk mulai berbelanja dan temukan penawaran menarik kami!'?>
                     </div>
                     <?php else: ?>
                     <div class="alert alert-danger text-center">

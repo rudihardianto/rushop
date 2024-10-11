@@ -23,10 +23,15 @@ function baseUrl($path = '', $secure = null)
     $is_production = getenv('APP_ENV') === 'production';
     $is_https      = $is_production || ($secure ?? (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'));
 
-    // Deteksi apakah menggunakan PHP built-in server
+    // Deteksi environment server
     $is_built_in_server = php_sapi_name() === 'cli-server';
+    $is_xampp           = strpos($_SERVER['SERVER_SOFTWARE'], 'XAMPP') !== false;
+    $is_laragon         = strpos($_SERVER['SERVER_SOFTWARE'], 'Laragon') !== false;
 
     if ($is_built_in_server) {
+        $domain = $_SERVER['HTTP_HOST'];
+    } elseif ($is_xampp || $is_laragon) {
+        // Untuk XAMPP dan Laragon, gunakan nama host dari request
         $domain = $_SERVER['HTTP_HOST'];
     } else {
         $domain = getenv('APP_DOMAIN') ?: 'rushop.test';

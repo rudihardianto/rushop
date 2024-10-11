@@ -22,8 +22,17 @@ function baseUrl($path = '', $secure = null)
 {
     $is_production = getenv('APP_ENV') === 'production';
     $is_https      = $is_production || ($secure ?? (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'));
-    $domain        = getenv('APP_DOMAIN') ?: 'rushop.test';
-    $base_url      = ($is_https ? "https://" : "http://") . $domain;
+
+    // Deteksi apakah menggunakan PHP built-in server
+    $is_built_in_server = php_sapi_name() === 'cli-server';
+
+    if ($is_built_in_server) {
+        $domain = $_SERVER['HTTP_HOST'];
+    } else {
+        $domain = getenv('APP_DOMAIN') ?: 'rushop.test';
+    }
+
+    $base_url = ($is_https ? "https://" : "http://") . $domain;
 
     // Remove file extension if it's .php
     $path = preg_replace('/\.php$/', '', $path);
@@ -139,6 +148,6 @@ function Logout()
     session_destroy();
 
     // Redirect ke halaman login
-    header('Location: ' . baseUrl('/login'));
+    header('Location: ' . baseUrl());
     exit;
 }

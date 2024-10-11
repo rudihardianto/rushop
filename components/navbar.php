@@ -19,7 +19,7 @@ if (isset($_GET['logout'])) {
 
         <!-- Toggler and Cart Button for Mobile -->
         <div class="d-flex align-items-center gap-3">
-            <?php if (!isLoggedIn()): ?>
+            <?php if (isLoggedIn()): ?>
             <!-- dropdown cart for mobile -->
             <div class="d-md-none">
                 <?=component('cart');?>
@@ -62,9 +62,13 @@ if (isset($_GET['logout'])) {
 
                 <!-- Profile Dropdown -->
                 <div class="dropdown">
-                    <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="path/to/profile.jpg" alt="Profile" width="30" height="30" class="rounded-circle">
+                    <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle gap-2"
+                        id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://via.placeholder.com/30" alt="Profile" width="30" height="30"
+                            class="rounded-circle">
+                        <div class="d-inline-block text-truncate" style="max-width: 150px;">
+                            <span class="text-black"><?=$_SESSION['user_name']?></span>
+                        </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dropdown-menu-sm-start dropdown-menu-md-end shadow mt-md-3"
                         aria-labelledby="dropdownUser">

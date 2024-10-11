@@ -1,9 +1,14 @@
 <?php
-// Asumsikan Anda memiliki fungsi untuk memeriksa status login
+
+// Cek apakah pengguna sudah login
 function isLoggedIn()
 {
-    // Implementasi logika untuk memeriksa apakah pengguna sudah login
     return isset($_SESSION['user_id']);
+}
+
+// Cek apakah ada parameter 'logout' di URL dan panggil function Logout
+if (isset($_GET['logout'])) {
+    Logout();
 }
 
 ?>
@@ -67,7 +72,12 @@ function isLoggedIn()
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="<?=baseUrl('/logout')?>">Logout</a></li>
+                        <li>
+                            <a class="dropdown-item" href="<?=baseUrl()?>?logout"
+                                onclick="return confirm('Hi <?=$_SESSION['user_name']?>, are you sure you want to logout?');">
+                                Logout
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <?php endif;?>

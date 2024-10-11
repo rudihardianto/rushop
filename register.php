@@ -1,5 +1,23 @@
 <?php
 require_once __DIR__ . '/components/header.php';
+
+$message = ''; // Untuk menyimpan pesan hasil pendaftaran
+
+// Cek apakah form disubmit
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Ambil data dari form
+    $register = [
+        'nama'      => $_POST['name'],
+        'email'     => $_POST['email'],
+        'phone'     => $_POST['phone'],
+        'address'   => $_POST['address'],
+        'password'  => $_POST['password'],
+        'password2' => $_POST['confirm-password'],
+    ];
+
+    // Panggil fungsi Register dan simpan hasilnya
+    $message = Register($register);
+}
 ?>
 
 <div class="container">
@@ -8,19 +26,27 @@ require_once __DIR__ . '/components/header.php';
             <div class="card shadow">
                 <div class="card-body">
                     <h2 class="card-title text-center mb-4">Register</h2>
+
+                    <!-- message -->
+                    <?php if ($message): ?>
+                    <div class="alert alert-info text-center">
+                        <?=htmlspecialchars($message)?>
+                    </div>
+                    <?php endif;?>
+
                     <form method="POST" action="<?=baseUrl('/register')?>">
                         <div class="row">
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="name" class="form-label">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="name" required>
+                                <input type="text" name="name" class="form-control" id="name" required>
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" name="email" class="form-control" id="email" required>
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="phone" class="form-label">No Telepon</label>
-                                <input type="text" class="form-control" id="phone" required>
+                                <input type="text" name="phone" class="form-control" id="phone" required>
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="address" class="form-label">Alamat</label>
@@ -28,11 +54,12 @@ require_once __DIR__ . '/components/header.php';
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" required>
+                                <input type="password" name="password" class="form-control" id="password" required>
                             </div>
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="confirm-password" class="form-label">Konfirmasi Password</label>
-                                <input type="password" class="form-control" id="confirm-password" required>
+                                <input type="password" name="confirm-password" class="form-control"
+                                    id="confirm-password" required>
                             </div>
                         </div>
                         <div class="d-grid gap-2">

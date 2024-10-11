@@ -1,5 +1,27 @@
 <?php
+
 require_once __DIR__ . '/components/header.php';
+
+$message = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $loginData = [
+        'email'       => $_POST['email'],
+        'password'    => $_POST['password'],
+        'remember_me' => isset($_POST['remember_me']),
+    ];
+
+    $loginResult = Login($loginData);
+
+    if ($loginResult === "Login berhasil!") {
+        // Redirect ke halaman home setelah berhasil login
+        header('Location: ' . baseUrl());
+        exit;
+    } else {
+        // Tampilkan pesan error
+        $message = $loginResult;
+    }
+}
 ?>
 
 <div class="container">
@@ -8,10 +30,18 @@ require_once __DIR__ . '/components/header.php';
             <div class="card shadow">
                 <div class="card-body">
                     <h2 class="card-title text-center mb-4">Login</h2>
-                    <form>
+                    <form method="POST" action="">
+
+                        <!-- message -->
+                        <?php if (!empty($message)): ?>
+                        <div class="alert alert-danger">
+                            <?=$message?>
+                        </div>
+                        <?php endif;?>
+
                         <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" required>
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
